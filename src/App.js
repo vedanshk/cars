@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import CarForm from "./components/CarForm";
+import CarSearch from "./components/CarSearch";
+import CarList from "./components/CarList";
+import CarValue from "./components/CarValue";
+import { useStore } from "react-redux";
 function App() {
+  
+    const store = useStore();
+    console.log(store.getState())
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CarForm />
+      <CarSearch />
+      <CarList />
+      <CarValue />
     </div>
   );
 }
