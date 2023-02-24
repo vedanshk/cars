@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import { addCar } from "./carSlice";
 const FormSlice = createSlice({
   name: "form",
   initialState: {
@@ -14,6 +14,14 @@ const FormSlice = createSlice({
       state.cost = action.payload;
     },
   },
+  extraReducers(bundle){
+    bundle.addCase(addCar , (state ,action)=>{
+
+      state.name = "";
+      state.cost = 0;
+
+    })
+  }
 
 });
 

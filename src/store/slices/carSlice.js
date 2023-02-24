@@ -3,12 +3,12 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 const CarSlice = createSlice({
   name: "car",
   initialState: {
-    searhTerm: "",
+    searchTerm: "",
     car: [],
   },
   reducers: {
     changeSearchTerm(state, action) {
-      state.searhTerm = action.payload;
+      state.searchTerm = action.payload;
     },
     addCar(state, action) {
       state.car.push({
@@ -18,10 +18,10 @@ const CarSlice = createSlice({
       });
     },
     removeCar(state, action) {
+      console.log(action.payload.id)
       const updatedCar = state.car.filter(
-        (car) => car.id !== action.payload.id
+        (data) => data.id !== action.payload.id
       );
-
       state.car = updatedCar;
     },
   },
