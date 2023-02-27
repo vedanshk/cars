@@ -16,8 +16,8 @@ function CarValue() {
   }
 
   return (
-    <div>
-      <h2>{totalValue}</h2>
+    <div className="car-value">
+      TotalValue: ${totalValue}
     </div>
   );
 }
